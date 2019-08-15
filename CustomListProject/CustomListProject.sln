@@ -1,0 +1,23 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomList", "CustomList\CustomList.csproj", "{9180849C-A66F-4BEA-83D2-CA8BEE16A346}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomListTest", "CustomListTest\CustomListTest.csproj", "{ACB3EC8A-41F1-41C8-BE7D-AD9E24C2FB39}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9180849C-A66F-4BEA-83D2-CA8BEE16A346}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{9180849C-A66F-4BEA-83D2-CA8BEE16A346}.Debug|x86.Build.0 = Debug|Any CPU
+		{9180849C-A66F-4BEA-83D2-CA8BEE16A346}.Release|x86.ActiveCfg = Release|Any CPU
+		{9180849C-A66F-4BEA-83D2-CA8BEE16A346}.Release|x86.Build.0 = Release|Any CPU
+		{ACB3EC8A-41F1-41C8-BE7D-AD9E24C2FB39}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{ACB3EC8A-41F1-41C8-BE7D-AD9E24C2FB39}.Debug|x86.Build.0 = Debug|Any CPU
+		{ACB3EC8A-41F1-41C8-BE7D-AD9E24C2FB39}.Release|x86.ActiveCfg = Release|Any CPU
+		{ACB3EC8A-41F1-41C8-BE7D-AD9E24C2FB39}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
