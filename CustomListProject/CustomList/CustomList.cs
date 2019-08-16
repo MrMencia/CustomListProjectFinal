@@ -66,8 +66,7 @@ namespace CustomList
                     temp[i] = items[i];
                 }
                 items = temp;
-                // fill up new bigger array with old stuff
-                // update 'items' to be the new, bigger array
+                
             }
 
 
@@ -76,7 +75,38 @@ namespace CustomList
             
         }
 
-        public void Remove(int index)
+
+        public void Remove(T itemToRemove)
+        {
+            bool itemIsFound = false;
+
+            for (int i= 0; i <= count; i++)
+            {
+                if (!itemIsFound)
+                {
+                    if (itemToRemove.Equals(items[i]) && itemIsFound == false)
+                    {
+                        items[i] = items[i + 1];
+                        count--;
+                    }
+                }
+                else
+                {
+                    itemIsFound = default;
+
+                }
+            }
+
+
+
+        }
+
+
+
+
+
+
+        public void RemoveAt(int index)
         {
               if(index >= 0 && index < count)
             {
