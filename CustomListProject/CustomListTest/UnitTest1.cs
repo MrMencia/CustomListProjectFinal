@@ -144,6 +144,43 @@ namespace CustomListTest
             Assert.AreEqual(expected, actual);
         }
 
+
+        [TestMethod]
+        public void ToString_MultipleItemsInList_OutputCSVString()
+        {
+            // Arrange
+            int itemsToAdd = 10;
+            string expected = "{ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 }";
+            CustomListClass<int> d = new CustomListClass<int>();
+            for (int i = 0; i < itemsToAdd; i++)
+            {
+                d.Add(i);
+            }
+
+            // Act
+            string actual = d.ToString();
+
+            // Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+
+        [TestMethod]
+        public void ToString_NoItemsInList_EmptyString()
+        {
+            // Arrange
+            string expected = " ";
+
+            CustomListClass<int> d = new CustomListClass<int>();
+
+            // Act
+            string actual = d.ToString();
+
+            // Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+
     }
 }
 

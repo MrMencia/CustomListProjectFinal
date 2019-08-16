@@ -129,6 +129,25 @@ namespace CustomList
             }
         }
 
+
+
+        public override string ToString()
+        {
+            string output = " ";
+
+            if (count > 0)
+            {
+                for (int i = 0; i < count; i++)
+                {
+                    output += items[i].ToString() + "/ ";
+                }
+
+                output = output.Substring(0, output.Length - 2);
+            }
+
+            return output + " ";
+        }
+
         public int Find(int v)
         {
             throw new NotImplementedException();
