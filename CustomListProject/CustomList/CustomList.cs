@@ -58,14 +58,14 @@ namespace CustomList
         {
             if(count == capacity)
             {
-                T[] temp = new T[capacity * 2];
-                for(int i =0; i < capacity; i++)
+                capacity *= 2;
+
+                T[] temp = new T[capacity];
+                for(int i =0; i < count; i++)
                 {
                     temp[i] = items[i];
-                    capacity *= 2;
-                    items = temp;
                 }
-
+                items = temp;
                 // fill up new bigger array with old stuff
                 // update 'items' to be the new, bigger array
             }
@@ -76,6 +76,33 @@ namespace CustomList
             
         }
 
+        public void Remove(int index)
+        {
+              if(index >= 0 && index < count)
+            {
+                for (int i = index; i < count; i++)
+                {
+                    if (i != count - 1)
+                    {
+                        items[i] = items[i + 1];
+                    }
+                    else
+                    {
+                        items[i] = default(T);
+                    }
+                }
+                count--;
+            }
+            else
+            {
+                throw new ArgumentOutOfRangeException();
+            }
+        }
+
+        public int Find(int v)
+        {
+            throw new NotImplementedException();
+        }
     }
 
     
