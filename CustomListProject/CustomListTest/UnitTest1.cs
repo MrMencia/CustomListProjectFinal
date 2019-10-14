@@ -1,5 +1,6 @@
+using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using CustomList;
+using CustomListClass;
 
 namespace CustomListTest
 {
@@ -17,7 +18,7 @@ namespace CustomListTest
             int actual;
 
             // act
-            testList.Add(1);
+            testList.Add(expected);
             actual = testList[0];
 
             Assert.AreEqual(expected, actual);
@@ -36,7 +37,7 @@ namespace CustomListTest
             // act
             testList.Add(1);
             testList.Add(2);
-            actual = testList[1];
+            actual = testList.Count;
 
             // assert
             Assert.AreEqual(expected, actual);
@@ -85,6 +86,7 @@ namespace CustomListTest
 
 
 
+//Remove Test Methods
 
         [TestMethod]
         public void Remove_RemoveFromEmptyList_ItemGoesToIndexZero()
@@ -144,7 +146,7 @@ namespace CustomListTest
             Assert.AreEqual(expected, actual);
         }
 
-
+        //ToString
         [TestMethod]
         public void ToString_MultipleItemsInList_OutputCSVString()
         {
@@ -182,6 +184,89 @@ namespace CustomListTest
 
 
     }
+
+
+    //Overload +
+    [TestMethod]
+    public void AddTwoListsTogether_StringHasCorrectValues()
+    {
+        //Arrange
+        CustomListClass<int> testListOne = new CustomListClass<int>();
+
+        testListOne.Add(121);
+        testListOne.Add(233);
+        testListOne.Add(344);
+        testListOne.Add(455);
+
+        CustomListClass<int> testListTwo = new CustomListClass<int>();
+
+        testListTwo.Add(566);
+        testListTwo.Add(677);
+        testListTwo.Add(788);
+        testListTwo.Add(899);
+        string expected = "111, 222, 333, 444, 555, 666, 777, 888";
+        string actual;
+
+        //Act
+        CustomListClass<int> result = testListOne + testListTwo;
+        actual = result.ToString();
+
+        //Assert
+        Assert.AreEqual(expected, actual);
+    }
+
+
+    //Overload -
+
+    [TestMethod]
+    public void SubtractLists_SubtractOneListFromAnother_ListHasCorrectValues()
+    {
+        //Arrange
+        CustomListClass<int> testListOne = new CustomListClass<int>();
+        testListOne.Add(121);
+        testListOne.Add(242);
+        testListOne.Add(258);
+        testListOne.Add(436);
+        CustomListClass<int> testListTwo = new CustomListClass<int>();
+        testListTwo.Add(143);
+        testListTwo.Add(654);
+        testListTwo.Add(764);
+        testListTwo.Add(346);
+        string expected = "222, 444, 232, 454";
+        string actual;
+
+        //Act
+        CustomListClass<int> result = testListOne - testListTwo;
+        actual = result.ToString();
+
+        //Assert
+        Assert.AreEqual(expected, actual);
+    }
+
+
+    // Zip
+    [TestMethod]
+    public void Zip_ZipTwoListsTogether_ListHasCorrectValues()
+    {
+        //Arrange
+        CustomListClass<int> testListOne = new CustomListClass<int>();
+        testListOne.Add(111);
+        testListOne.Add(222);
+        testListOne.Add(333);
+        CustomListClass<int> testListTwo = new CustomListClass<int>();
+        testListTwo.Add(444);
+        testListTwo.Add(555);
+        testListTwo.Add(666);
+        string expected = "111, 444, 222, 555, 333, 666";
+        string actual;
+
+        //Act
+        actual = CustomListClass<int>.Zip(testListOne, testListTwo).ToString();
+
+        //Assert
+        Assert.AreEqual(expected, actual);
+    }
+
 }
 
 

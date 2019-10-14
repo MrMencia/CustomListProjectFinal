@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CustomList
+namespace CustomListClass
 {
     class Program
     {
